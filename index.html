@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safeway Carriers | Safeway Carries LLC</title>
+  <meta
+    name="description"
+    content="Safeway Carriers, operating under Safeway Carries LLC, provides dry van, reefer, and team driving freight solutions with professional communication and broker-ready presentation."
+  />
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0d0d0d;
+      --card: rgba(18, 18, 18, 0.9);
+      --line: rgba(255,255,255,0.08);
+      --text: #f5f7f8;
+      --muted: #a8b0b3;
+      --green: #00f58b;
+      --green-dark: #00b86a;
+      --shadow: 0 20px 60px rgba(0, 245, 139, 0.12);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(0,245,139,0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(0,245,139,0.09), transparent 22%),
+        linear-gradient(180deg, #020202 0%, #070707 45%, #050505 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(4,4,4,0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-mark {
+      width: 14px;
+      height: 14px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 16px rgba(0,245,139,0.7);
+    }
+
+    .brand span {
+      font-size: 1rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover { color: white; }
+
+    .nav .cta-mini {
+      background: var(--green);
+      color: black;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      padding: 88px 20px 56px;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-left,
+    .hero-right {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-left {
+      padding: 42px 30px;
+      animation: rise 0.9s ease forwards;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-size: 0.78rem;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--green);
+      display: block;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 .accent {
+      color: var(--green);
+      text-shadow: 0 0 18px rgba(0,245,139,0.22);
+    }
+
+    .legal-name {
+      margin-top: 16px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      margin-top: 18px;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: black;
+      box-shadow: 0 12px 30px rgba(0,245,139,0.18);
+    }
+
+    .btn-primary:hover {
+      background: #1aff9a;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: white;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-points {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+    }
+
+    .point {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      animation: rise 1.1s ease forwards;
+    }
+
+    .hero-visual {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(0,245,139,0.12), transparent 38%),
+        linear-gradient(0deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+        radial-gradient(circle at 70% 10%, rgba(0,245,139,0.14), transparent 28%);
+    }
+
+    .truck-road {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: 56px;
+      height: 6px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 15%, rgba(255,255,255,0.18) 85%, transparent 100%);
+      overflow: hidden;
+    }
+
+    .truck-road::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0 32px,
+        var(--green) 32px 52px
+      );
+      opacity: 0.65;
+      animation: roadmove 7s linear infinite;
+    }
+
+    .truck {
+      position: absolute;
+      left: 8%;
+      bottom: 70px;
+      width: 280px;
+      max-width: 72%;
+      animation: truckFloat 4s ease-in-out infinite;
+      filter: drop-shadow(0 16px 34px rgba(0,0,0,0.45));
+    }
+
+    .truck svg { width: 100%; height: auto; display: block; }
+
+    .dashboard {
+      position: absolute;
+      top: 26px;
+      right: 22px;
+      width: 170px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.46);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .dashboard small {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.72rem;
+    }
+
+    .dashboard strong {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--green);
+    }
+
+    .dashboard span {
+      display: block;
+      color: white;
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+
+    .section {
+      padding: 30px 20px 76px;
+    }
+
+    .section-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .section-head .tag {
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section-head h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .service-grid,
+    .feature-grid,
+    .review-grid,
+    .contact-grid,
+    .template-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 20px;
+    }
+
+    .review-grid,
+    .contact-grid,
+    .template-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,245,139,0.3);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,245,139,0.08);
+      border: 1px solid rgba(0,245,139,0.2);
+      color: var(--green);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.97rem;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .feature strong {
+      display: block;
+      color: var(--green);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .feature span {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .compliance-banner {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border: 1px solid rgba(0,245,139,0.22);
+      border-radius: 18px;
+      background: linear-gradient(90deg, rgba(0,245,139,0.12), rgba(0,245,139,0.04));
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .contact-card .row {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .label {
+      color: var(--muted);
+      display: block;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 1.08rem;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .copy-btn {
+      margin-top: 14px;
+      background: rgba(255,255,255,0.04);
+      color: white;
+      border: 1px solid var(--line);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      border-color: rgba(0,245,139,0.3);
+      color: var(--green);
+    }
+
+    .template-box textarea {
+      width: 100%;
+      min-height: 210px;
+      background: #090909;
+      color: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      resize: vertical;
+      font: inherit;
+      line-height: 1.6;
+    }
+
+    .template-box textarea:focus {
+      outline: 1px solid rgba(0,245,139,0.5);
+      border-color: rgba(0,245,139,0.4);
+    }
+
+    .template-actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .review-card .stars {
+      color: var(--green);
+      letter-spacing: 3px;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .review-card p {
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .review-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .notice {
+      margin-top: 18px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+
+    .cta-panel {
+      padding: 34px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(0,245,139,0.14), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+    }
+
+    .cta-panel p {
+      margin: 0 auto 24px;
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 20px 40px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes truckFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes roadmove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-84px); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .service-grid,
+      .feature-grid,
+      .review-grid,
+      .contact-grid,
+      .template-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        min-height: 360px;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-left,
+      .hero-right,
+      .card,
+      .cta-panel {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      h1 {
+        font-size: 2.55rem;
+      }
+
+      .truck {
+        width: 220px;
+        left: 5%;
+      }
+
+      .dashboard {
+        width: 145px;
+        right: 14px;
+        top: 14px;
+        padding: 14px;
+      }
+
+      .topbar-inner {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <span>Safeway Carriers</span>
+      </div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#broker">Broker Info</a>
+        <a href="#templates">Templates</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="cta-mini">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="eyebrow">Nationwide Freight Solutions</div>
+        <h1>
+          Premium Freight by
+          <span class="accent">Safeway Carriers</span>
+        </h1>
+        <div class="legal-name">Operating under Safeway Carries LLC</div>
+        <p class="hero-copy">
+          Dry van, reefer, and team driving solutions built for dependable service,
+          clean communication, and a broker-ready presentation. We focus on professionalism,
+          responsiveness, and delivering freight the right way.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:Safewaycarries03@gmail.com?subject=Quote%20Request%20-%20Safeway%20Carriers">Request Quote</a>
+          <a class="btn btn-secondary" href="tel:3156144806">Call 315-614-4806</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="point">
+            <strong>Dry Van</strong>
+            <span>Professional freight handling with clean communication and strong availability.</span>
+          </div>
+          <div class="point">
+            <strong>Reefer</strong>
+            <span>Temperature-sensitive freight support with reliable updates and execution.</span>
+          </div>
+          <div class="point">
+            <strong>Team Driving</strong>
+            <span>Long-haul capacity designed for better movement and stronger time coverage.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-visual"></div>
+
+        <div class="dashboard">
+          <small>Broker Ready</small>
+          <strong>24/7</strong>
+          <span>Responsive service, quote communication, and freight support.</span>
+        </div>
+
+        <div class="truck">
+          <svg viewBox="0 0 620 260" xmlns="http://www.w3.org/2000/svg" aria-label="Truck graphic">
+            <rect x="78" y="95" width="290" height="95" rx="18" fill="#0f0f0f" stroke="#00f58b" stroke-width="4"/>
+            <rect x="370" y="118" width="112" height="72" rx="14" fill="#121212" stroke="#00f58b" stroke-width="4"/>
+            <rect x="406" y="95" width="82" height="36" rx="12" fill="#0f0f0f" stroke="#00f58b" stroke-width="4"/>
+            <rect x="434" y="104" width="38" height="18" rx="5" fill="#00f58b" opacity="0.75"/>
+            <rect x="96" y="110" width="236" height="50" rx="8" fill="#00f58b" opacity="0.07"/>
+            <circle cx="165" cy="200" r="28" fill="#0a0a0a" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="165" cy="200" r="10" fill="#00f58b"/>
+            <circle cx="314" cy="200" r="28" fill="#0a0a0a" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="314" cy="200" r="10" fill="#00f58b"/>
+            <circle cx="420" cy="200" r="28" fill="#0a0a0a" stroke="#ffffff" stroke-width="4"/>
+            <circle cx="420" cy="200" r="10" fill="#00f58b"/>
+            <rect x="68" y="160" width="448" height="14" rx="6" fill="#1e1e1e"/>
+            <rect x="67" y="130" width="10" height="16" rx="4" fill="#00f58b"/>
+            <rect x="514" y="145" width="18" height="12" rx="4" fill="#00f58b"/>
+          </svg>
+        </div>
+
+        <div class="truck-road"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="services">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="tag">Services</div>
+        <h2>Freight Services Built to Look Professional and Move Right</h2>
+        <p>
+          Safeway Carriers presents a clean, dependable image for brokers and shippers while
+          focusing on responsive contact, smooth load handling, and strong service execution.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="card">
+          <div class="icon">🚛</div>
+          <h3>Dry Van</h3>
+          <p>
+            Flexible support for standard freight with a focus on reliability,
+            clean updates, and professional handling from pickup through delivery.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">❄️</div>
+          <h3>Reefer</h3>
+          <p>
+            Cold-chain freight support for shippers and brokers who need consistency,
+            strong communication, and a polished carrier presentation.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">⏱️</div>
+          <h3>Team Driving</h3>
+          <p>
+            Team-based support for higher-demand freight movement where stronger time coverage
+            and long-haul efficiency matter.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <strong>Fast Response</strong>
+          <span>Built to make quote requests, broker outreach, and direct contact simple.</span>
+        </div>
+        <div class="feature">
+          <strong>Clean Branding</strong>
+          <span>Brand shown as Safeway Carriers, legal entity shown as Safeway Carries LLC.</span>
+        </div>
+        <div class="feature">
+          <strong>Broker Ready</strong>
+          <span>Contact templates and structured information sections for easier communication.</span>
+        </div>
+        <div class="feature">
+          <strong>Scalable Layout</strong>
+          <span>Made to grow later with MC, DOT, insurance, packet links, and dispatch pages.</span>
+        </div>
+      </div>
+
+      <div class="compliance-banner">
+        Safeway Carriers is the operating brand. Safeway Carries LLC is the legal business name used for formal business communication and broker-facing presentation.
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="broker">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="tag">Broker Contact</div>
+        <h2>Professional Contact Details</h2>
+        <p>
+          Use the buttons below to quickly copy business contact information for broker emails,
+          packet requests, dispatch communication, and quote conversations.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <h3>Company Information</h3>
+          <div class="row">
+            <span class="label">Brand Name</span>
+            <div class="value">Safeway Carriers</div>
+            <button class="copy-btn" onclick="copyText('Safeway Carriers', 'Brand name copied')">Copy Brand Name</button>
+          </div>
+          <div class="row">
+            <span class="label">Legal Company Name</span>
+            <div class="value">Safeway Carries LLC</div>
+            <button class="copy-btn" onclick="copyText('Safeway Carries LLC', 'Legal company name copied')">Copy Legal Name</button>
+          </div>
+          <div class="row">
+            <span class="label">Contact Name</span>
+            <div class="value">Lasun</div>
+            <button class="copy-btn" onclick="copyText('Lasun', 'Contact name copied')">Copy Contact Name</button>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <h3>Direct Contact</h3>
+          <div class="row">
+            <span class="label">Phone</span>
+            <div class="value">315-614-4806</div>
+            <button class="copy-btn" onclick="copyText('315-614-4806', 'Phone number copied')">Copy Phone</button>
+          </div>
+          <div class="row">
+            <span class="label">Email</span>
+            <div class="value">Safewaycarries03@gmail.com</div>
+            <button class="copy-btn" onclick="copyText('Safewaycarries03@gmail.com', 'Email copied')">Copy Email</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="templates">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="tag">Templates</div>
+        <h2>Broker & Shipper Contact Templates</h2>
+        <p>
+          These are copy-ready starter templates you can use when contacting brokers,
+          requesting setup, or replying to freight opportunities.
+        </p>
+      </div>
+
+      <div class="template-grid">
+        <div class="card template-box">
+          <h3>Broker Introduction Email</h3>
+          <textarea id="template1" readonly>Subject: Carrier Introduction - Safeway Carriers
+
+Hello,
+
+My name is Lasun with Safeway Carriers, operating under Safeway Carries LLC. We are reaching out to introduce our company for dry van, reefer, and team driving opportunities.
+
+Please keep our contact information on file for current and upcoming freight needs.
+
+Company: Safeway Carries LLC
+Brand: Safeway Carriers
+Contact: Lasun
+Phone: 315-614-4806
+Email: Safewaycarries03@gmail.com
+
+We look forward to working with you.
+
+Thank you,
+Lasun
+Safeway Carriers</textarea>
+          <div class="template-actions">
+            <button class="btn btn-primary" onclick="copyArea('template1', 'Broker intro copied')">Copy Template</button>
+          </div>
+        </div>
+
+        <div class="card template-box">
+          <h3>Packet / Setup Request Reply</h3>
+          <textarea id="template2" readonly>Subject: Re: Carrier Setup Request
+
+Hello,
+
+Thank you for the opportunity.
+
+Please send over any setup or packet requirements for Safeway Carries LLC / Safeway Carriers and we will review them promptly.
+
+Primary contact:
+Lasun
+Phone: 315-614-4806
+Email: Safewaycarries03@gmail.com
+
+Thank you,
+Lasun
+Safeway Carriers</textarea>
+          <div class="template-actions">
+            <button class="btn btn-primary" onclick="copyArea('template2', 'Setup reply copied')">Copy Template</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="reviews">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="tag">Reviews</div>
+        <h2>Presentation-Ready Review Section</h2>
+        <p>
+          These are layout placeholders only. Replace them with real broker, shipper,
+          or dispatch feedback once you have it.
+        </p>
+      </div>
+
+      <div class="review-grid">
+        <div class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>“Responsive communication and a professional presentation from start to finish.”</p>
+          <div class="review-meta">Placeholder — replace with a real broker review</div>
+        </div>
+        <div class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>“Easy to work with, straightforward contact, and polished company branding.”</p>
+          <div class="review-meta">Placeholder — replace with a real shipper review</div>
+        </div>
+      </div>
+
+      <div class="notice">
+        Replace these with real reviews as you build actual business relationships.
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="contact">
+    <div class="section-inner">
+      <div class="cta-panel">
+        <h2>Ready to Connect?</h2>
+        <p>
+          Reach out for quote requests, broker introductions, setup conversations, and service inquiries.
+          Safeway Carriers is positioned to present your company with a clean and professional online presence.
+        </p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="mailto:Safewaycarries03@gmail.com?subject=Quote%20Request%20-%20Safeway%20Carriers">Email for Quote</a>
+          <a class="btn btn-secondary" href="tel:3156144806">Call 315-614-4806</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Safeway Carriers</div>
+      <div>Operating under Safeway Carries LLC</div>
+    </div>
+  </footer>
+
+  <script>
+    function copyText(text, message) {
+      navigator.clipboard.writeText(text).then(function () {
+        alert(message);
+      });
+    }
+
+    function copyArea(id, message) {
+      const area = document.getElementById(id);
+      navigator.clipboard.writeText(area.value).then(function () {
+        alert(message);
+      });
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const reveals = document.querySelectorAll(".reveal");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach((item) => revealObserver.observe(item));
+  </script>
+</body>
+</html>
